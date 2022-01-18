@@ -4,11 +4,12 @@ public class Ordenador {
     //ATRIBUTOS
 
     private String nomOrdenador;
-    private double memRamOrdenador;
+    private static double memRamOrdenador;
     private double hddOrdenador;
     private SistemaOperativo soOrdenador;
 
     private int opcionOrdenador;
+    public boolean pcoff;
 
     Scanner sc = new Scanner(System.in);
 
@@ -19,30 +20,38 @@ public class Ordenador {
         this.nomOrdenador = nomOrdenador;
         this.memRamOrdenador = memRamOrdenador;
         this.hddOrdenador = hddOrdenador;
-
     }
     //METODOS
 
     public void ordenadorEncendido(){
         System.out.println(" Choose the option you want " + '\n' + '\n'
                 + " OPTION 0 : INSTALL OS " +'\n'+  '\n' + " OPTION 1 : POWER OFF ");
-        sc.nextInt();
+        opcionOrdenador = sc.nextInt();
         switch (opcionOrdenador){
-            case 0 : setSoOrdenador(soOrdenador);
+
+            case 0 :
+                pcoff=false;
+                setSoOrdenador(soOrdenador);
+
+
             break;
-            case 1: System.out.println(" TURNING OFF... ");
+
+            case 1 :
+                System.out.println(" TURNING OFF PC... ");
+                pcoff = true;
             break;
+
 
         }
     }
 
+
     @Override
     public String toString() {
-        return " COMPUTER " + '\n'
+        return " COMPUTER SPECS " + '\n' +'\n'
                 + " COMPUTER NAME : " + nomOrdenador + '\n'
-                + " RAM : " + memRamOrdenador
-                + " HDD : " + hddOrdenador
-                + " OPERATIVE SYSTEM : " + soOrdenador;
+                + " RAM : " + memRamOrdenador +'\n'
+                + " HDD : " + hddOrdenador + '\n';
     }
 
     //GETTERS Y SETTERS

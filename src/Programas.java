@@ -13,6 +13,10 @@ public class Programas {
         this.espacioReqProgram = espacioReqProgram;
         this.memRamReqPrograma = memRamReqPrograma;
     }
+    //METODOS
+    private void startProgram(){
+        System.out.println(" EL PROGRAMA HA INICIADO.");
+    }
 
     //GETTERS Y SETTERS
 
