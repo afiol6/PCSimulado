@@ -25,22 +25,21 @@ public class Ordenador {
 
     public void ordenadorEncendido(){
         System.out.println(" Choose the option you want " + '\n' + '\n'
-                + " OPTION 0 : INSTALL OS " +'\n'+  '\n' + " OPTION 1 : POWER OFF ");
+                + " OPTION 0 : INSTALL OS " +'\n'+  '\n' + " OPTION 1 : POWER OFF " +'\n');
         opcionOrdenador = sc.nextInt();
         switch (opcionOrdenador){
 
             case 0 :
-                pcoff=false;
-                setSoOrdenador(soOrdenador);
-
-
-            break;
+                this.pcoff=false;
+                break;
 
             case 1 :
                 System.out.println(" TURNING OFF PC... ");
-                pcoff = true;
-            break;
+                this.pcoff = true;
+                break;
 
+            default:
+                System.out.println(" INVALID KEY ");
 
         }
     }
@@ -86,5 +85,13 @@ public class Ordenador {
 
     public void setSoOrdenador(SistemaOperativo soOrdenador) {
         this.soOrdenador = soOrdenador;
+    }
+
+    public boolean isPcoff() {
+        return pcoff;
+    }
+
+    public void setPcoff(boolean pcoff) {
+        this.pcoff = pcoff;
     }
 }

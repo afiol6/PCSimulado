@@ -4,18 +4,20 @@ public class Programas {
 
     private String nomPrograma,versPrograma;
     private double espacioReqProgram,memRamReqPrograma;
+    private boolean instalado;
 
     //CONSTRUCTORES
 
-    public Programas(String nomPrograma, String versPrograma, double espacioReqProgram, double memRamReqPrograma) {
+    public Programas(String nomPrograma, String versPrograma, double espacioReqProgram, double memRamReqPrograma,boolean instalado) {
         this.nomPrograma = nomPrograma;
         this.versPrograma = versPrograma;
         this.espacioReqProgram = espacioReqProgram;
         this.memRamReqPrograma = memRamReqPrograma;
+        this.instalado = instalado;
     }
     //METODOS
     private void startProgram(){
-        System.out.println(" EL PROGRAMA HA INICIADO.");
+        System.out.println(" EL PROGRAMA HA INICIADO. ");
     }
 
     //GETTERS Y SETTERS
@@ -51,5 +53,13 @@ public class Programas {
 
     public void setMemRamReqPrograma(double memRamReqPrograma) {
         this.memRamReqPrograma = memRamReqPrograma;
+    }
+
+    public boolean isInstalado() {
+        return instalado;
+    }
+
+    public void setInstalado(boolean instalado) {
+        this.instalado = instalado;
     }
 }
